@@ -190,10 +190,9 @@ app.put('/editnewhouses/:id', (req, res) => {
 
 
 // Serve frontend
-app.use(express.static(path.join(__dirname, "../RIC/build")));
+app.use(express.static(path.join(__dirname, "../E-cart/build")));
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../RIC/build/index.html"));
-    
+    res.sendFile(path.join(__dirname, "../E-cart/build/index.html"));
 });
 
 
