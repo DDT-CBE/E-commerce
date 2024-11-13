@@ -1,0 +1,160 @@
+/* about.css */
+
+.aboutcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutbox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+}
+.left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-image: url(../Assets/3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+.aboutimg{
+  display: none;
+}
+
+.left img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px 0 0 10px;
+  object-fit: cover;
+}
+
+.right {
+  padding: 20px;
+  flex: 1;
+  text-align: left;
+  background-color: #ade8f4;
+
+}
+
+.right h1 {
+  font-size: 2rem;
+  color:darkblue;
+}
+
+.right h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color:darkblue;
+}
+
+.right h3 {
+  font-size: 1.25rem;
+  margin-top: 20px;
+  color:darkblue;
+}
+
+.right p {
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.right ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.right li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+  .aboutbox {
+    flex-direction: column;
+  }
+
+  .right {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .left img {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .right h1 {
+    font-size: 1.8rem;
+  }
+
+  .right h2 {
+    font-size: 1.4rem;
+  }
+
+  .right h3 {
+    font-size: 1.2rem;
+  }
+
+  .right p, .right li {
+    font-size: 0.95rem;
+  }
+  .aboutimg{
+    display: block;
+    width: 600px;
+  }
+  .aboutbox {
+    margin: 5px;
+  }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+  .aboutbox {
+    margin: 0px;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+
+  .right h1 {
+    font-size: 1.5rem;
+  }
+
+  .right h2 {
+    font-size: 1.2rem;
+  }
+
+  .right h3 {
+    font-size: 1.1rem;
+  }
+
+  .right p, .right li {
+    font-size: 0.9rem;
+  }
+
+ 
+
+  .right {
+    padding: 15px;
+  }
+  .aboutimg{
+    display: block;
+  }
+}

@@ -1,0 +1,237 @@
+/* General styles */
+.buyer-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 30px;
+  color: #34495e;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-top: 30px;
+}
+
+.buyer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  height: auto;
+}
+
+/* Buyer card styles */
+.buyer-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: 500px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* .buyer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+} */
+
+/* Details table styles */
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.details-table th,
+.details-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.details-table th {
+  font-weight: bold;
+  background-color: #f0f2f5;
+  color: #2c3e50;
+  width: 50%;
+}
+
+.details-table td {
+  color: #555;
+  background-color: #fafafa;
+  width: 50%;
+}
+
+/* More button styles */
+.more {
+  background: linear-gradient(to right, #03045e, #0096c7);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.morehide {
+  display: none;
+}
+
+/* Search bar styles */
+.search {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search input {
+  width: 300px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #ade8f4;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+.search button {
+  padding: 10px 25px;
+  background-color: #03045e;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.search button:hover {
+  background-color: #0096c7;
+  color: white;
+}
+
+/* Image styles */
+.img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Loader styles */
+.loader {
+  height: 100vh;
+  width: 100%;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+
+
+.image-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  position: relative; /* For positioning arrows */
+}
+
+.arrow {
+  width: 30px;
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor on hover */
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2rem;
+}
+
+.img {
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 10px; /* Space between image and arrows */
+}
+
+/* Optional: Add hover effect for arrows */
+.arrow:hover {
+  color: #0073e6; /* Change color on hover */
+}
+
+.approve-button{
+  border: none;
+  padding: 10px;
+  margin: 10px 20px;
+  border-radius: 20px;
+  background: green;
+  color: white;
+}
+
+.heading{
+  margin: 100px 0px;
+}
+
+/* Media query for tablet devices */
+@media (max-width: 768px) {
+  .buyer-card {
+    width: 80%;
+    padding: 20px;
+  }
+  
+  .img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .details-table th,
+  .details-table td {
+    font-size: 13px;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 488px) {
+  .buyer-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .buyer-title {
+    font-size: 2rem;
+  }
+
+  .details-table th,
+  .details-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .more {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  .search button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  
+}

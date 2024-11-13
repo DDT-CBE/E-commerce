@@ -1,0 +1,115 @@
+.homecontainer {
+  height: 90vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-position: top;
+  background-size: cover;
+  padding-top: 10vh;
+  gap: 10px;
+}
+
+.right-box {
+  height: 90vh;
+  flex: 2;
+  background-image: url(../Assets/4.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text{
+  margin-top: 15vh;
+  color: white;
+  padding: 40px;
+}
+
+.text h1{
+  font-size: 5rem;
+}
+
+.text p{
+  font-size: 5rem;
+  color: white;
+}
+.left-box {
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.top img {
+  width: 100%;
+}
+.bottom {
+  display: flex;
+  height: 50vh;
+  gap: 10px;
+}
+
+.bottom-left-box {
+  height: 50vh;
+  overflow: hidden;
+  width: 50%;
+}
+.bottom-left-box img {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bottom-right-box {
+  height: 50vh;
+  width: 50%;
+  overflow: hidden;
+}
+
+.bottom-right-box img {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .homecontainer {
+    padding-top: 8vh;
+    background-position: center;
+  }
+
+  .homecontainer h1 {
+    font-size: 4rem;
+    margin: 0 80px;
+  }
+}
+
+/* Small tablets and large phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .homecontainer {
+    padding-top: 6vh;
+    background-position: center;
+  }
+
+  .homecontainer h1 {
+    font-size: 3rem;
+    margin: 0 60px;
+  }
+}
+
+/* Small phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .homecontainer {
+    padding-top: 4vh;
+    background-position: center;
+    justify-content: center; /* Center content on small screens */
+    text-align: center;
+  }
+
+  .homecontainer h1 {
+    font-size: 2.5rem;
+    margin: 0 20px;
+  }
+}
