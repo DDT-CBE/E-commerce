@@ -29,7 +29,7 @@ nav ul li{
 }
 
 .txtcolor{
-    color: #48cae4;
+   color: white;
     font-weight: 600;
 }
 
@@ -52,7 +52,7 @@ nav h1{
         display: block;
         position: absolute;
         z-index: 100;
-        width: 40px;
+        width: 70px;
         
     }
     nav  h1{

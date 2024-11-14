@@ -95,15 +95,22 @@ p {
 
 @media screen and (max-width: 480px) {
 
+  .page-title {
+  
+    margin: 350px 0 50px 0;
+   
+  }
   .products-container {
     gap: 0px;
   }
   
   .products-card {
-    height: 300px;
+    height: 250px;
     margin-bottom: 30px;
     width: 150px;
     padding: 5px;
+  
+    margin: 0px 20px 20px 0px;
   }
 
   .image-container {

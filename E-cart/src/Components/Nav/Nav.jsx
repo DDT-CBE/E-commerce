@@ -35,13 +35,44 @@ const Nav = () => {
               Home
             </ScrollLink>
           </li>
+          <li>
+            <ScrollLink
+              to="homecontainer"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+           Men
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink
+              to="homecontainer"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+            Women
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink
+              to="homecontainer"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+            Kids
+            </ScrollLink>
+          </li>
 
-          <li>Sweaters</li>
-          <li>Jeans</li>
-          <li>Coats & Jackets</li>
-          <li>Accessories</li>
-          <li>Suits</li>
-          <li>Profile</li>
+     
         </ul>
       </nav>
     </Fragment>
