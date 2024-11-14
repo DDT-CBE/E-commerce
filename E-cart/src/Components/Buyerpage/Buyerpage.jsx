@@ -36,10 +36,10 @@ const Buyerpage = () => {
    
     const handleBuyNow = () => {
 
-        if(productData){
+        if(product){
             const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code if necessary.
             const message = encodeURIComponent(
-              `Hello, I'm interested in buying *${productData.productName}* for *₹${productData.price}*.`
+              `Hello, I'm interested in buying *${product.productName}* for *₹${product.price}*.`
             );
         
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -84,7 +84,7 @@ const Buyerpage = () => {
                                         <button className="view-more">View Details</button>
                                     </Link>
                                     <Link to={`products/${product._id}`}>
-                                        <button className="view-more" onClick={handleBuyNow}>Enquiry</button>
+                                        <button className="view-more" onClick={()=>handleBuyNow(product)}>Enquiry</button>
                                     </Link>
                                 </div>
                             </div>
