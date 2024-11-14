@@ -36,6 +36,16 @@ const Buyerpage = () => {
     if (loading) {
         return <div className='loader'></div>; // Show loading indicator while data is being fetched
     }
+    const handleBuyNow = () => {
+        const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code if necessary.
+        const message = encodeURIComponent(
+          `Hello, I'm interested in buying ${productData.productName} for ₹${productData.price}.`
+        );
+    
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+        window.open(whatsappURL, "_blank");
+      };
 
     return (
         <Fragment>
@@ -68,7 +78,7 @@ const Buyerpage = () => {
                                         <button className="view-more">View Details</button>
                                     </Link>
                                     <Link to={`products/${product._id}`}>
-                                        <button className="view-more">Enquiry</button>
+                                        <button className="view-more" onClick={handleBuyNow}>Enquiry</button>
                                     </Link>
                                 </div>
                             </div>

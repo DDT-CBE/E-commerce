@@ -53,6 +53,17 @@ const Product = () => {
     }
   };
 
+  const handleBuyNow = () => {
+    const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code if necessary.
+    const message = encodeURIComponent(
+      `Hello, I'm interested in buying ${details.productName} for ₹${details.price}.`
+    );
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    window.open(whatsappURL, "_blank");
+  };
+
   if (!details) {
     return <div className="loading">Loading...</div>;
   }
@@ -124,10 +135,11 @@ const Product = () => {
                     {details.shippingDetails.shippingCost}
                   </div>
                   <div className="detail-item">
-                    <strong>Warranty Info:</strong> {details.warrantyInfo}
+                    <strong>Product Specifications:</strong>{" "}
+                    {details.warrantyInfo}
                   </div>
                   <div className="detail-item">
-                    <strong>Return Policy:</strong> {details.returnPolicy}
+                    <strong>Product Features:</strong> {details.returnPolicy}
                   </div>
                   <div className="detail-item">
                     <strong>Customer Support Info:</strong>{" "}
@@ -136,13 +148,9 @@ const Product = () => {
                 </div>
 
                 <div className="product-actions">
-                  <div className="quantity-selector">
-                    <button className="quantity-btn">-</button>
-                    <input type="number" value="1" min="1" />
-                    <button className="quantity-btn">+</button>
-                  </div>
-                  <button className="add-to-cart-btn">Add to Cart</button>
-                  <button className="buy-now-btn">Buy Now</button>
+                  <button className="buy-now-btn" onClick={handleBuyNow}>
+                    Buy Now
+                  </button>
                 </div>
               </div>
             </div>
