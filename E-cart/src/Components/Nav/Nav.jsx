@@ -37,7 +37,7 @@ const Nav = () => {
           </li>
           <li>
             <ScrollLink
-              to="homecontainer"
+              to="products-container"
               spy={true}
               smooth={true}
               offset={-60}
@@ -49,7 +49,7 @@ const Nav = () => {
           </li>
           <li>
             <ScrollLink
-              to="homecontainer"
+              to="products-container"
               spy={true}
               smooth={true}
               offset={-60}
@@ -61,7 +61,7 @@ const Nav = () => {
           </li>
           <li>
             <ScrollLink
-              to="homecontainer"
+              to="products-container"
               spy={true}
               smooth={true}
               offset={-60}
