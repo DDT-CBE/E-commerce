@@ -49,7 +49,7 @@ const App = () => {
           </Route>
         
         
-          <Route path='product/:id' element={<Product />}></Route>
+          <Route path='products/:id' element={<Product />}></Route>
   
     </Routes>   
     <ToastContainer />

@@ -1,9 +1,7 @@
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
 import './buyerpage.css'; // Import your CSS file
-import Nav2 from '../Nav2/Nav2';
 import { Link, useSearchParams } from 'react-router-dom';
-import Search from '../Search/Search';
 import { Button, Result } from 'antd';
 
 const url = process.env.REACT_APP_API_URL;
@@ -53,23 +51,23 @@ const Buyerpage = () => {
                     extra={<Button type="primary" href='/'>Back Home</Button>}
                 />
             ) : (
-                <div className="product-container">
+                <div className="products-container">
                     {productData.length === 0 ? (
                         <p>No products available at the moment.</p> // Additional message if the products are empty
                     ) : (
                         productData.map((product) => (
-                            <div className="product-card" key={product._id}>
+                            <div className="products-card" key={product._id}>
                                 <div className="image-container">
-                                    <img className="product-image" src={product.productImages[0]} alt={product.productName} />
+                                    <img className="products-image" src={product.productImages[0]} alt={product.productName} />
                                 </div>
-                                <div className="product-info">
-                                    <h2 className="product-name">{product.productName}</h2>
+                                <div className="products-info">
+                                    <h2 className="products-name">{product.productName}</h2>
                                 
-                                    <p className="product-price">${product.price}</p>
-                                    <Link to={`product/${product._id}`}>
+                                    <p className="products-price">${product.price}</p>
+                                    <Link to={`products/${product._id}`}>
                                         <button className="view-more">View Details</button>
                                     </Link>
-                                    <Link to={`product/${product._id}`}>
+                                    <Link to={`products/${product._id}`}>
                                         <button className="view-more">Enquiry</button>
                                     </Link>
                                 </div>
