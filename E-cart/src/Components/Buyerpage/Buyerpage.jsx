@@ -34,7 +34,7 @@ const Buyerpage = () => {
     }, [searchparams]);
 
    
-    const handleBuyNow = () => {
+    const handleBuyNow = (product) => {
 
         if(product){
             const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code if necessary.
