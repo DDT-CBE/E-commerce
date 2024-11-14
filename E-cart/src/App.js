@@ -41,9 +41,9 @@ const App = () => {
                   <Nav />
                   <Home />
                   <Buyerpage/>  
-                  <About/>
+                  {/* <About/>
                   <Enquiry />
-                  <Contact />
+                  <Contact /> */}
                 
                   </Fragment>  }>
           </Route>

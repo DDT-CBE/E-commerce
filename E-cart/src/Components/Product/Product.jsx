@@ -9,14 +9,16 @@ const url = process.env.REACT_APP_API_URL;
 
 const Product = () => {
   const [details, setDetails] = useState(null);
-  const [count, setCount] = useState(0);
   const [err, setErr] = useState(null);
   const { id } = useParams();
+  const [index, setIndex] = useState(0);
+  const [img, setImg] = useState(null);
 
   const getSingleProduct = async () => {
     try {
       const res = await axios.get(`${url}getsingleproduct/${id}`);
       setDetails(res.data);
+      setImg(res.data.productImages[0]); // Set initial image once details are fetched
     } catch (error) {
       setErr("Single product fetching Error: " + error.message);
     }
@@ -28,15 +30,26 @@ const Product = () => {
     }
   }, [id]);
 
-  const handleLeftArrowClick = () => {
-    if (count > 0) {
-      setCount(count - 1);
+  const incrementIndex = () => {
+    if (details) {
+      setIndex((prevIndex) => (prevIndex + 1) % details.productImages.length);
+      setImg(details.productImages[(index + 1) % details.productImages.length]);
     }
   };
 
-  const handleRightArrowClick = () => {
-    if (count < details.productImages.length - 1) {
-      setCount(count + 1);
+  const decrementIndex = () => {
+    if (details) {
+      setIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + details.productImages.length) %
+          details.productImages.length
+      );
+      setImg(
+        details.productImages[
+          (index - 1 + details.productImages.length) %
+            details.productImages.length
+        ]
+      );
     }
   };
 
@@ -47,69 +60,89 @@ const Product = () => {
   return (
     <Fragment>
       <Nav2 />
-
       <div className="productcontainer">
         {err ? (
           <div className="errormessage">
             <h2>{err}</h2>
           </div>
         ) : (
-          <div className="productcard" key={details._id}>
-            <div className="imageslider">
-              <button
-                className="arrowbtn leftbtn"
-                onClick={handleLeftArrowClick}
-              >
-                &lt;
-              </button>
-              <div className="productimagewrapper">
-                <Image
-                  src={details.productImages[count]}
-                  alt={details.productName}
-                />
+          <div className="product-container">
+            <>
+              <div className="product-thumbnails">
+                {details.productImages.map((image, i) => (
+                  <img
+                    key={i}
+                    className={`thumbnail-image ${
+                      img === image ? "selected-thumbnail" : ""
+                    }`}
+                    src={image}
+                    alt=""
+                    onMouseOver={() => setImg(image)}
+                  />
+                ))}
               </div>
+              <div className="product-main-image">
+                <button onClick={incrementIndex} className="next-arrow">
+                  &gt;
+                </button>
+                <button onClick={decrementIndex} className="prev-arrow">
+                  &lt;
+                </button>
+                <Image className="main-image" src={img} alt="Product" />
+              </div>
+            </>
+            <div className="productcard" key={details._id}>
+              <div className="product-info">
+                <h1 className="product-title">{details.productName}</h1>
+                <h3 className="product-brand">{details.brand}</h3>
+                <p className="product-description">
+                  {details.productDescription}
+                </p>
 
-              <button
-                className="arrowbtn rightbtn"
-                onClick={handleRightArrowClick}
-              >
-                &gt;
-              </button>
-            </div>
-            <div className="productinfo">
-              <h1 className="producttitle">{details.productName}</h1>
-              <h3 className="productbrand">{details.brand}</h3>
-              <p className="productdescription">{details.productDescription}</p>
-              <div className="detailsgrid">
-                <div className="detailitem">
-                  <strong>Model Number:</strong> {details.modelNumber}
+                <div className="product-details-grid">
+                  <div className="detail-item">
+                    <strong>Model Number:</strong> {details.modelNumber}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Price:</strong>{" "}
+                    <span className="product-price">₹{details.price}</span>
+                  </div>
+                  <div className="detail-item">
+                    <strong>Size:</strong> {details.variations.size}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Color:</strong> {details.variations.color}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Material:</strong> {details.variations.material}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Style:</strong> {details.variations.style}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Shipping Cost:</strong> ₹
+                    {details.shippingDetails.shippingCost}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Warranty Info:</strong> {details.warrantyInfo}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Return Policy:</strong> {details.returnPolicy}
+                  </div>
+                  <div className="detail-item">
+                    <strong>Customer Support Info:</strong>{" "}
+                    {details.customerSupportInfo}
+                  </div>
                 </div>
-                <div className="detailitem">
-                  <strong>Price:</strong> ₹{details.price}
-                </div>
-                <div className="detailitem">
-                  <strong>Size:</strong> {details.variations.size}
-                </div>
-                <div className="detailitem">
-                  <strong>Color:</strong> {details.variations.color}
-                </div>
-                <div className="detailitem">
-                  <strong>Material:</strong> {details.variations.material}
-                </div>
-                <div className="detailitem">
-                  <strong>Style:</strong> {details.variations.style}
-                </div>
-                <div className="detailitem">
-                  <strong>Shipping Cost:</strong> ₹{details.shippingDetails.shippingCost}
-                </div>
-                <div className="detailitem">
-                  <strong>Warranty Info:</strong> {details.warrantyInfo}
-                </div>
-                <div className="detailitem">
-                  <strong>Return Policy:</strong> {details.returnPolicy}
-                </div>
-                <div className="detailitem">
-                  <strong>Customer Support Info:</strong> {details.customerSupportInfo}
+
+                <div className="product-actions">
+                  <div className="quantity-selector">
+                    <button className="quantity-btn">-</button>
+                    <input type="number" value="1" min="1" />
+                    <button className="quantity-btn">+</button>
+                  </div>
+                  <button className="add-to-cart-btn">Add to Cart</button>
+                  <button className="buy-now-btn">Buy Now</button>
                 </div>
               </div>
             </div>

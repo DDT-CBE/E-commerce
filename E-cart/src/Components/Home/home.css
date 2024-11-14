@@ -1,115 +1,131 @@
+/* Main Container */
 .homecontainer {
   height: 90vh;
   display: flex;
   justify-content: start;
   align-items: center;
-  background-position: top;
-  background-size: cover;
   padding-top: 10vh;
   gap: 10px;
 }
 
+/* Right Box - Hero Section */
 .right-box {
   height: 90vh;
   flex: 2;
-  background-image: url(../Assets/4.avif);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
 }
 
-.text{
-  margin-top: 15vh;
+.right-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ 
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
-  padding: 40px;
+  text-align: center;
+  z-index: 1;
 }
 
-.text h1{
+.text h1 {
   font-size: 5rem;
+  margin: 0;
 }
 
-.text p{
-  font-size: 5rem;
+.text p {
+  font-size: 2rem;
+  margin: 10px 0 0;
   color: white;
 }
+
+/* Left Box - Image Grid */
 .left-box {
-  height: 100vh;
+  height: 90vh;
   flex: 1;
   display: flex;
-  gap: 10px;
   flex-direction: column;
+  gap: 10px;
 }
+
 .top img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;   
 }
+
 .bottom {
   display: flex;
   height: 50vh;
   gap: 10px;
 }
 
-.bottom-left-box {
-  height: 50vh;
-  overflow: hidden;
-  width: 50%;
-}
-.bottom-left-box img {
-  height: 50vh;
-  width: 100%;
-  object-fit: cover;
-}
-
+.bottom-left-box,
 .bottom-right-box {
-  height: 50vh;
   width: 50%;
   overflow: hidden;
 }
 
+.bottom-left-box img,
 .bottom-right-box img {
-  height: 50vh;
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-
-
-/* Tablets (max-width: 1024px) */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .homecontainer {
-    padding-top: 8vh;
-    background-position: center;
-  }
-
-  .homecontainer h1 {
+  .text h1 {
     font-size: 4rem;
-    margin: 0 80px;
+  }
+
+  .text p {
+    font-size: 1.5rem;
   }
 }
 
-/* Small tablets and large phones (max-width: 768px) */
 @media (max-width: 768px) {
-  .homecontainer {
-    padding-top: 6vh;
-    background-position: center;
+  .text h1 {
+    font-size: 3rem;
   }
 
-  .homecontainer h1 {
-    font-size: 3rem;
-    margin: 0 60px;
+  .text p {
+    font-size: 1.2rem;
   }
 }
 
-/* Small phones (max-width: 480px) */
 @media (max-width: 480px) {
   .homecontainer {
-    padding-top: 4vh;
-    background-position: center;
-    justify-content: center; /* Center content on small screens */
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
-  .homecontainer h1 {
+  .right-box,
+  .left-box {
+    width: 100%;
+  }
+
+  .text h1 {
     font-size: 2.5rem;
-    margin: 0 20px;
+  }
+
+  .text p {
+    font-size: 1rem;
+  }
+
+  .bottom {
+    height: auto;
+  }
+
+  .bottom-left-box,
+  .bottom-right-box {
+    width: 50%;
+    height: auto;
   }
 }

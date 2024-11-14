@@ -64,10 +64,13 @@ const Buyerpage = () => {
                                 </div>
                                 <div className="product-info">
                                     <h2 className="product-name">{product.productName}</h2>
-                                    <p className="product-description">{product.productDescription}</p>
+                                
                                     <p className="product-price">${product.price}</p>
                                     <Link to={`product/${product._id}`}>
                                         <button className="view-more">View Details</button>
+                                    </Link>
+                                    <Link to={`product/${product._id}`}>
+                                        <button className="view-more">Enquiry</button>
                                     </Link>
                                 </div>
                             </div>

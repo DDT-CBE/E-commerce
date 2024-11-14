@@ -10,7 +10,9 @@ const Home = () => {
     <Fragment>
       <div className="homecontainer">
         <div className="right-box">
+        <img src={productImg4} alt="" />
           <div className="text">
+         
             <h1>Create Your Individuality</h1> <br />
             <p>Discover new styles and trends</p>
           </div>
