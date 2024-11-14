@@ -150,20 +150,7 @@ if (req.query.district) {
 });
 
   
-app.get("/getsingleproperty/:id", async (req, res) => {
-  const { id } = req.params; // Get the id from the request params
-  try {
-      const getUser = await PropertyModel.findById(id); // Pass the id directly to findById
-      if (!getUser) {
-          return res.status(404).json({ error: "House not found" }); // Handle case where house is not found
-      }
-      res.json(getUser); // Send the retrieved house as JSON response
-    
-  } catch (error) {
-      console.log(error.message);
-      res.status(500).json({ error: "Internal server error" }); // Handle error and send a response
-  }
-});
+
 
 
 
