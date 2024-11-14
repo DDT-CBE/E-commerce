@@ -54,15 +54,17 @@ const Product = () => {
   };
 
   const handleBuyNow = () => {
-    const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code if necessary.
-    const message = encodeURIComponent(
-      `Hello, I'm interested in buying ${details.productName} for ₹${details.price}.`
-    );
-
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
-    window.open(whatsappURL, "_blank");
+    if (details) {
+      const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code.
+      const message = encodeURIComponent(
+        `Hello, I'm interested in buying ${details.productName} for ₹${details.price}.`
+      );
+  
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappURL, "_blank");
+    }
   };
+  
 
   if (!details) {
     return <div className="loading">Loading...</div>;

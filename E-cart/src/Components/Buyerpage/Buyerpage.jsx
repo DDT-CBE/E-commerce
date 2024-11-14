@@ -33,19 +33,25 @@ const Buyerpage = () => {
         fetchProducts();
     }, [searchparams]);
 
-    if (loading) {
+   
+    const handleBuyNow = () => {
+
+        if(productData){
+            const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code if necessary.
+            const message = encodeURIComponent(
+              `Hello, I'm interested in buying *${productData.productName}* for *₹${productData.price}*.`
+            );
+        
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+        
+            window.open(whatsappURL, "_blank");
+        }
+  
+      };
+
+      if (loading) {
         return <div className='loader'></div>; // Show loading indicator while data is being fetched
     }
-    const handleBuyNow = () => {
-        const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code if necessary.
-        const message = encodeURIComponent(
-          `Hello, I'm interested in buying ${productData.productName} for ₹${productData.price}.`
-        );
-    
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-    
-        window.open(whatsappURL, "_blank");
-      };
 
     return (
         <Fragment>
