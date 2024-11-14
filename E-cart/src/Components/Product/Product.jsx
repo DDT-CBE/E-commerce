@@ -57,7 +57,7 @@ const Product = () => {
     if (details) {
       const phoneNumber = "+919994587405"; // Replace with the actual phone number, including country code.
       const message = encodeURIComponent(
-        `Hello, I'm interested in buying ${details.productName} for ₹${details.price}.`
+        `Hello, I'm interested in buying *${details.productName}*, \n\n*Model Number: ${details.modelNumber}*,\n\nProduct Link: https://e-commerce-k3k2.onrender.com/products/${details._id}`
       );
   
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;

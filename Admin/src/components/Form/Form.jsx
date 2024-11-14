@@ -189,9 +189,9 @@ const Form = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="Men’s Clothing">Men’s Clothing</option>
-            <option value="Women’s Clothing">Women’s Clothing</option>
-            <option value="Kids Clothing">Kids Clothing</option>
+            <option value="Male">Men’s Clothing</option>
+            <option value="Women">Women’s Clothing</option>
+            <option value="Kids">Kids Clothing</option>
           </select>
 
           <label class="form-label">Subcategory</label>

@@ -38,7 +38,7 @@ const Buyerpage = () => {
         if (product) {
             const phoneNumber = "+919994587405";
             const message = encodeURIComponent(
-                `Hello, I'm interested in buying *${product.productName}*, \n\n *Model Number: ${product.modelNumber}*,\n\nProduct Link: https://e-commerce-k3k2.onrender.com/products/${product._id}`
+                `Hello, I'm interested in buying *${product.productName}*, \n\n*Model Number: ${product.modelNumber}*,\n\nProduct Link: https://e-commerce-k3k2.onrender.com/products/${product._id}`
             );
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappURL, "_blank");
