@@ -38,14 +38,13 @@ const Buyerpage = () => {
         if (product) {
             const phoneNumber = "+919994587405";
             const message = encodeURIComponent(
-                `Hello, I'm interested in buying *${product.productName}* for *₹${product.price}*.
-                
-                 My Product Link ${`${url}/products/${product._id}`}`
+                `Hello, I'm interested in buying *${product.productName}* for *Model Number: ${product.modelNumber}*.\n\nProduct Link: ${url}/products/${product._id}`
             );
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappURL, "_blank");
         }
     };
+    
 
     // Filter product data based on selected category
     const filteredProducts = category ? productData.filter((product) =>   product.category.toLowerCase().includes(category.toLowerCase())  ) : productData;
