@@ -6,9 +6,16 @@ import productImg3 from "../Assets/3.webp";
 import productImg4 from "../Assets/4.avif";
 import { Carousel } from "antd";
 import 'antd/dist/reset.css';
-
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  // Function to handle category selection
+  const handleCategoryClick = (category) => {
+    navigate(`/products?category=${category}`);
+  };
   return (
     <Fragment>
       <div className="homecontainer">
@@ -39,10 +46,10 @@ const Home = () => {
           </div>
           <div className="bottom">
             <div className="bottom-left-box">
-              <img src={productImg1} alt="" />
+              <img onClick={() => handleCategoryClick("Women")} src={productImg1} alt="" />
             </div>
             <div className="bottom-right-box">
-              <img src={productImg3} alt="" />
+              <img onClick={() => handleCategoryClick("Male")} src={productImg3} alt="" />
             </div>
           </div>
         </div>

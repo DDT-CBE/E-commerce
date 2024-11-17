@@ -50,6 +50,7 @@ const App = () => {
         
         
           <Route path='products/:id' element={<Product />}></Route>
+          <Route path='/products' element={ <Buyerpage/>  }></Route>
   
     </Routes>   
     <ToastContainer />

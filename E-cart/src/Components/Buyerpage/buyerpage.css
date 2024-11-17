@@ -1,8 +1,8 @@
 /* General styling for the page */
-.page-title {
+.page-title , .title {
   text-align: center;
   font-size: 2.5rem;
-  margin: 250px 0 50px 0;
+  margin: 100px 0 50px 0;
   font-weight: bold;
   color: #333;
 }
@@ -92,24 +92,24 @@ p {
   background-color: #ddd;
 }
 
-
 @media screen and (max-width: 480px) {
-
   .page-title {
-  
     margin: 350px 0 50px 0;
-   
+  }
+
+  .title {
+    margin: 150px 0 50px 0;
   }
   .products-container {
     gap: 0px;
   }
-  
+
   .products-card {
     height: 250px;
     margin-bottom: 30px;
     width: 150px;
     padding: 5px;
-  
+
     margin: 0px 20px 20px 0px;
   }
 
